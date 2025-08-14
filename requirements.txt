@@ -1,5 +1,6 @@
 streamlit==1.37.1
 langchain==0.2.14
+langchain-community==0.0.173  # Importante: instalar para HuggingFaceHub
 huggingface_hub==0.20.3
 pydantic==2.8.2
 pydantic-core==2.20.1
