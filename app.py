@@ -11,9 +11,9 @@ st.markdown("Pregunta sobre cultivos, fertilización, enfermedades de plantas y 
 # Token de HuggingFace (configurado en Streamlit Secrets)
 HF_API_KEY = st.secrets["HF_API_KEY"]
 
-# Inicializar el modelo
+# Inicializar el modelo usando HuggingFaceHub
 llm = HuggingFaceHub(
-    repo_id="tiiuae/falcon-7b-instruct",  # modelo de ejemplo
+    repo_id="tiiuae/falcon-7b-instruct",  # Modelo de ejemplo
     huggingfacehub_api_token=HF_API_KEY,
     model_kwargs={"temperature": 0.5, "max_length": 256}
 )
