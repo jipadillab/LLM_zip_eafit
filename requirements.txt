@@ -1,0 +1,6 @@
+streamlit
+langchain==0.2.14
+langchain-community
+huggingface_hub
+pydantic==2.8.2
+pydantic-core==2.20.1
