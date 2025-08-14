@@ -13,7 +13,7 @@ HF_API_KEY = st.secrets["HF_API_KEY"]
 
 # Inicializar el modelo usando HuggingFaceHub
 llm = HuggingFaceHub(
-    repo_id="tiiuae/falcon-7b-instruct",  # Modelo de ejemplo
+    repo_id="tiiuae/falcon-7b",  # Modelo gratuito y disponible públicamente
     huggingfacehub_api_token=HF_API_KEY,
     model_kwargs={"temperature": 0.5, "max_length": 256}
 )
