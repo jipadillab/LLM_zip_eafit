@@ -1,21 +1,21 @@
 import streamlit as st
-from langchain_community.llms import HuggingFaceHub
+from langchain_groq import ChatGroq # Changed import
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
 # Configuración de la página
 st.set_page_config(page_title="Agente de Agricultura", page_icon="🌱")
-st.title("🌱 Agente de Agricultura con LangChain y HuggingFace")
+st.title("🌱 Agente de Agricultura con LangChain y Groq") # Updated title
 st.markdown("Pregunta sobre cultivos, fertilización, enfermedades de plantas y buenas prácticas agrícolas.")
 
-# Token de HuggingFace (configurado en Streamlit Secrets)
-HF_API_KEY = st.secrets["HF_API_KEY"]
+# Token de Groq (configurado en Streamlit Secrets)
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"] # Changed secret key name
 
-# Inicializar el modelo usando HuggingFaceHub
-llm = HuggingFaceHub(
-    repo_id="tiiuae/falcon-7b",  # Modelo gratuito y disponible públicamente
-    huggingfacehub_api_token=HF_API_KEY,
-    model_kwargs={"temperature": 0.5, "max_length": 256}
+# Inicializar el modelo usando ChatGroq
+llm = ChatGroq(
+    api_key=GROQ_API_KEY,
+    model_name="llama3-8b-8192",  # Un modelo rápido y potente disponible en Groq
+    temperature=0.5
 )
 
 # Plantilla de prompt
